@@ -96,7 +96,7 @@ module.exports = function(grunt) {
 			custom: {
 				options: {
 					'web-port': 1337,
-					'web-host': 'localhost',
+					'web-host': 'https://e-dash.herokuapp.com/',
 					'debug-port': 5858,
 					'save-live-edit': true,
 					'no-preload': true,
