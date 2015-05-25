@@ -6,7 +6,7 @@ var init = require('./config/init')(),
 	config = require('./config/config'),
 	mongoose = require('mongoose'),
 	chalk = require('chalk');
-
+var port = process.env.PORT || 5000;
 /**
  * Main application entry file.
  * Please note that the order of loading is important.
@@ -29,7 +29,7 @@ var app = require('./config/express')(db);
 require('./config/passport')();
 
 // Start the app by listening on <port>
-app.listen(server.listen(process.env.PORT || 3000));
+app.listen(port);
 
 // Expose app
 exports = module.exports = app;
