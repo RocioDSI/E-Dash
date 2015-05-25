@@ -1,7 +1,12 @@
 'use strict';
 
 module.exports = {
-	db: process.env.MONGOHQ_URL || process.env.MONGOLAB_URI || 'mongodb://' + (process.env.DB_1_PORT_27017_TCP_ADDR || 'localhost') + '/edash',
+    // Replace <user>:<password> with your real user:pass
+    db: "mongodb://alu0100592832@ull.edu.es:UntrustZ7@paulo.mongohq.com:10095/EDash",
+    app: {
+        name: "EDash"
+    },
+	//db: process.env.MONGOHQ_URL || process.env.MONGOLAB_URI || 'mongodb://' + (process.env.DB_1_PORT_27017_TCP_ADDR || 'localhost') + '/edash',
 	assets: {
 		lib: {
 			css: [
