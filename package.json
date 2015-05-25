@@ -11,6 +11,7 @@
 		"start": "grunt",
 		"test": "grunt test",
 		"postinstall": "bower install --config.interactive=false"
+		"postinstall": "./node_modules/.bin/grunt build"
 	},
 	"dependencies": {
 		"express": "~4.10.1",
