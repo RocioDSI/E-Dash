@@ -1,0 +1,35 @@
+<section data-ng-controller="ColisionsController" data-ng-init="findOne()">
+    <div class="page-header">
+        <h1>Edit Colision</h1>
+    </div>
+    <div class="col-md-12">
+        <form class="form-horizontal" data-ng-submit="update()" novalidate>
+            <fieldset>
+                <div class="form-group">
+                    <label class="control-label" for="url_video">Url del video</label>
+                    <div class="controls">
+                        <input type="text" data-ng-model="colision.url_video" id="url_video" class="form-control" placeholder="Url del video" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label" for="latitud">Latitud</label>
+                    <div class="controls">
+                        <input type="text" data-ng-model="colision.latitud" id="latitud" class="form-control" placeholder="Coordenadas de latitud" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label" for="longitud">Longitud</label>
+                    <div class="controls">
+                        <input type="text" data-ng-model="colision.longitud" id="longitud" class="form-control" placeholder="Coordenada de longitud" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Update" class="btn btn-default">
+                </div>
+				<div data-ng-show="error" class="text-danger">
+					<strong data-ng-bind="error"></strong>
+				</div>
+            </fieldset>
+        </form>
+    </div>
+</section>

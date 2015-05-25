@@ -1,0 +1,44 @@
+<section data-ng-controller="ColisionsController">
+    <div class="page-header">
+        <h1>Colisiones</h1>
+    </div>
+
+    <div>
+        <table ng-table="tableParams">
+            <tr ng-repeat="colision in $data">
+                <td data-title="'Url del video'" sortable="'url_video'">{{colision.url_video}}</td>
+                <td data-title="'Latitud'" sortable="'latitud'">{{colision.latitud}}</td>
+                <td data-title="'Longitud'" sortable="'longitud'">{{colision.longitud}}</td>
+                <td data-title="'Fecha del accidente'" sortable="'created'">
+                    <span data-ng-bind="colision.created | date:'mediumDate'"></span>
+                </td>
+                <td data-title="'User ID'" sortable="'userId'">
+                    <span data-ng-bind="colision.userId'"></span>
+                </td>
+                <td data-title="'User Email'" sortable="'userEmail">
+                    <span data-ng-bind="colision.userEmail'"></span>
+                </td>
+                <td data-title="'User Name'" sortable="'UserName'">
+                    <span data-ng-bind="colision.userName'"></span>
+                </td>
+                <td>
+                    <div class="table-actions">
+                        <a class="btn btn-default" title="View" href="/#!/colisions/{{colision._id}}">
+                            <span class="glyphicon glyphicon-eye-open"></span>
+                        </a>
+                        <a class="btn btn-default" title="Edit" href="/#!/colisions/{{colision._id}}/edit">
+                            <span class="glyphicon glyphicon-edit"></span>
+                        </a>
+                        <button class="btn btn-primary" data-ng-click="remove(colision)">
+                            <span class="glyphicon glyphicon-trash"></span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="alert alert-warning text-center" data-ng-hide="!colisions.$resolved || colisions.length">
+    	No Colisions yet, why don't you <a href="/#!/colisions/create">create one</a>?
+    </div>
+</section>
